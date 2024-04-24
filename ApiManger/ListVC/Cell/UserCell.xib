@@ -51,6 +51,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="cardView" destination="y5c-K1-DP4" id="4qN-GJ-1id"/>
                 <outlet property="lblUserName" destination="5Wf-Zm-2fX" id="1d8-9N-Bek"/>
             </connections>
             <point key="canvasLocation" x="252.67175572519082" y="48.943661971830991"/>

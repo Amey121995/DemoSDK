@@ -12,6 +12,7 @@ class ListVC: UIViewController {
     var data: [User] = []
     private let completion: (_ name: String?,_ dict: [String:Any]?) -> Void
     var count = 1
+    private var selectedUser: User?
     init(completion: @escaping (_ name: String?,_ dict: [String:Any]?) -> Void) {
         self.completion = completion
         super.init(nibName: "ListVC", bundle: Bundle(for: ListVC.self))
@@ -54,6 +55,16 @@ class ListVC: UIViewController {
         }
     }
     
+    @IBAction func onDoneButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true) { [weak self] in
+            guard let self = self  else { return }
+            if self.selectedUser != nil {
+                let name = "\(self.selectedUser?.firstName ?? "") \(self.selectedUser?.lastName ?? "")"
+                self.completion(name, self.selectedUser?.toDict())
+            }
+        }
+       
+    }
 }
 
 extension ListVC: UITableViewDataSource, UITableViewDelegate{
@@ -67,6 +78,15 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         cell.selectionStyle = .none
         cell.lblUserName.text = "\(data.firstName ?? "") \(data.lastName ?? "")"
+        if data.id == self.selectedUser?.id{
+            cell.cardView.backgroundColor = .blue.withAlphaComponent(0.1)
+            cell.lblUserName.textColor = .white
+        }
+        else
+        {
+            cell.cardView.backgroundColor = .white
+            cell.lblUserName.textColor = .black
+        }
         return cell
     }
     
@@ -76,11 +96,13 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let firstUser = self.data[indexPath.row]
-        dismiss(animated: true) { [weak self] in
-            guard let self = self  else { return }
-            let name = "\(firstUser.firstName ?? "") \(firstUser.lastName ?? "")"
-            self.completion(name, firstUser.toDict())
-        }
+        self.selectedUser = firstUser
+        self.tableView.reloadData()
+//        dismiss(animated: true) { [weak self] in
+//            guard let self = self  else { return }
+//            let name = "\(firstUser.firstName ?? "") \(firstUser.lastName ?? "")"
+//            self.completion(name, firstUser.toDict())
+//        }
 
     }
     

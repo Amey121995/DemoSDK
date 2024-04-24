@@ -8,6 +8,7 @@
 import UIKit
 
 class UserCell: UITableViewCell {
+    @IBOutlet var cardView: UIView!
     @IBOutlet var lblUserName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
