@@ -40,7 +40,7 @@
                                         <constraint firstAttribute="width" constant="200" id="ip0-0a-FqG"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Done"/>
                                     <connections>
                                         <action selector="onDoneButtonPressed:" destination="-1" eventType="touchUpInside" id="Eo8-ZM-38n"/>
                                     </connections>
