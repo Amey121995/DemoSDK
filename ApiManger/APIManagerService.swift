@@ -12,21 +12,6 @@ public class APIManagerService {
     
     static func fetchUserEmails(count: Int,completion: @escaping (_ isSuccess: Bool,_ userList: [User]?,_ page: Int?) -> Void) {
         let url = "https://reqres.in/api/users?page=\(count)"
-//        AF.request(url).responseDecodable(of: UserModel.self) { response in
-//            switch response.result {
-//                case .success(let userModel):
-//                let userList = userModel.userList ?? [User]()
-//                if userList.isEmpty{
-//                    completion(false, nil)
-//                }
-//                else{
-//                    completion(true, userList)
-//                }
-//                case .failure(let error):
-//                    print("error -- \(error)")
-//                completion(false, nil)
-//            }
-//        }
         AF.request(url, encoding: JSONEncoding.default).responseString { response in
             switch response.result{
             case .success(let JSON):

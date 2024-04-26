@@ -6,18 +6,19 @@
 //
 
 import UIKit
-
 class ListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var data: [User] = []
     private let completion: (_ name: String?,_ dict: [String:Any]?) -> Void
     var count = 1
     private var selectedUser: User?
+    
     init(completion: @escaping (_ name: String?,_ dict: [String:Any]?) -> Void) {
         self.completion = completion
         super.init(nibName: "ListVC", bundle: Bundle(for: ListVC.self))
     }
 
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -98,12 +99,6 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate{
         let firstUser = self.data[indexPath.row]
         self.selectedUser = firstUser
         self.tableView.reloadData()
-//        dismiss(animated: true) { [weak self] in
-//            guard let self = self  else { return }
-//            let name = "\(firstUser.firstName ?? "") \(firstUser.lastName ?? "")"
-//            self.completion(name, firstUser.toDict())
-//        }
-
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

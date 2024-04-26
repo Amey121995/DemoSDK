@@ -30,6 +30,7 @@
 		CFD7CC362BD6AA3E0085E477 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD7CC2F2BD6AA3E0085E477 /* ListVC.swift */; };
 		CFD7CC372BD6AA3E0085E477 /* ListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFD7CC302BD6AA3E0085E477 /* ListVC.xib */; };
 		CFD7CC392BD6AAE60085E477 /* ApiManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD7CC382BD6AAE60085E477 /* ApiManger.swift */; };
+		CFD7CC822BDB80790085E477 /* ApiManger.framework.zip in Resources */ = {isa = PBXBuildFile; fileRef = CFD7CC812BDB80790085E477 /* ApiManger.framework.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		CFD7CC2F2BD6AA3E0085E477 /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		CFD7CC302BD6AA3E0085E477 /* ListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListVC.xib; sourceTree = "<group>"; };
 		CFD7CC382BD6AAE60085E477 /* ApiManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManger.swift; sourceTree = "<group>"; };
+		CFD7CC812BDB80790085E477 /* ApiManger.framework.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ApiManger.framework.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		CFD7CB6B2BD68CB00085E477 /* DemoSDK */ = {
 			isa = PBXGroup;
 			children = (
+				CFD7CC812BDB80790085E477 /* ApiManger.framework.zip */,
 				CFD7CB6C2BD68CB00085E477 /* AppDelegate.swift */,
 				CFD7CB6E2BD68CB00085E477 /* SceneDelegate.swift */,
 				CFD7CB702BD68CB00085E477 /* ViewController.swift */,
@@ -437,6 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD7CC822BDB80790085E477 /* ApiManger.framework.zip in Resources */,
 				CFD7CB762BD68CB10085E477 /* Assets.xcassets in Resources */,
 				CFD7CB792BD68CB10085E477 /* Base in Resources */,
 				CFD7CB742BD68CB00085E477 /* Base in Resources */,
